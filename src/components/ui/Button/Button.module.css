@@ -1,0 +1,29 @@
+.button {
+  font-family: var(--font-family);
+  border: none;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary {
+  color: var(--accent);
+  background: #fff;
+  border: 2px solid var(--accent);
+}
+
+.primary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.secondary {
+  color: #fff;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.secondary:hover {
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}

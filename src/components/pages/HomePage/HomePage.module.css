@@ -1,0 +1,41 @@
+.HomePage {
+  padding: 95px 0;
+}
+
+.HomePage__title {
+  font-weight: 700;
+  font-size: 58px;
+
+  line-height: 1.4;
+
+  margin-bottom: 34px;
+}
+
+.HomePage__action {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.HomePage__button {
+  border-radius: 5px;
+  padding: 15px;
+  width: 128px;
+}
+
+.HomePage__link {
+  color: var(--accent);
+  background: #fff;
+  border: 1px solid var(--accent);
+  width: 155px;
+
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.HomePage__link:hover {
+  background: var(--accent);
+  color: #fff;
+}
