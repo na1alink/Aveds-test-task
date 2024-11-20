@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import users from "../../../data/users.json";
-
-interface User {
-  login: string;
-  password: string;
-  name: string;
-}
+import { User } from "../../../types/User";
+import styles from "./LoginForm.module.css";
+import Button from "../Button/Button";
 
 interface LoginFormProps {
   onLogin: (user: User) => void;
+  onSuccess: () => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onSuccess }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -31,27 +29,32 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
       onLogin(user);
+      onSuccess();
     } else {
       setError("Неверный логин или пароль");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input
         type="text"
         placeholder="Логин"
         value={login}
         onChange={(e) => setLogin(e.target.value)}
+        className={styles.form__input}
       />
       <input
         type="password"
         placeholder="Пароль"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        className={styles.form__input}
       />
-      {error && <div className="error">{error}</div>}
-      <button type="submit">Войти</button>
+      {error && <div className={styles.form__error}>{error}</div>}
+      <Button type="submit" variant="secondary" className={styles.form__button}>
+        Войти
+      </Button>
     </form>
   );
 };

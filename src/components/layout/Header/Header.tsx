@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "../../ui/Modal/Modal";
 import LoginForm from "../../ui/LoginForm/LoginForm";
 import { User } from "../../../types/User";
@@ -14,6 +14,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isLoggedIn, onLogout, onLogin }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleLoginClick = () => {
     setIsModalOpen(true);
@@ -21,6 +22,11 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, onLogout, onLogin }) => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setIsModalOpen(false);
+    navigate("/profile");
   };
 
   return (
@@ -55,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, onLogout, onLogin }) => {
           )}
         </nav>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-          <LoginForm onLogin={onLogin} />
+          <LoginForm onLogin={onLogin} onSuccess={handleLoginSuccess} />
         </Modal>
       </div>
     </header>

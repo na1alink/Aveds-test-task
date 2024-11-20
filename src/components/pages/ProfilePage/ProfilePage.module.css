@@ -1,0 +1,76 @@
+.ProfilePage {
+  padding: 160px 0;
+}
+
+.ProfilePage__title {
+  font-weight: 700;
+  font-size: 58px;
+
+  line-height: 1.37931;
+
+  margin-bottom: 20px;
+}
+.ProfilePage__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ProfilePage__logout {
+  border-radius: 5px;
+  padding: 15px;
+  width: 228px;
+}
+
+.ProfilePage__link {
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 15px;
+  width: 239px;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  line-height: 1.57143;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--accent);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ProfilePage__link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .ProfilePage {
+    padding: 70px 0;
+  }
+
+  .ProfilePage__title {
+    font-size: 44px;
+
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ProfilePage {
+    padding: 56px 0;
+  }
+
+  .ProfilePage__title {
+    font-size: 28px;
+  }
+
+  .ProfilePage__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ProfilePage__logout,
+  .ProfilePage__link {
+    width: 100%;
+  }
+}

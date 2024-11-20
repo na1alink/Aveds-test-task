@@ -26,14 +26,12 @@ body {
 
 @media (max-width: 1200px) {
   :root {
-    --container-padding: 40px;
-    --container-padding-min: 80px;
+    --container-padding: 60px;
   }
 }
 
 @media (max-width: 767px) {
   :root {
-    --container-padding: 25px;
-    --container-padding-min: 20px;
+    --container-padding: 10px;
   }
 }

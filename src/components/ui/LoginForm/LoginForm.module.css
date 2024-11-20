@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+}
+
+.form__input {
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form__button {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form__error {
+  padding: 10px;
+  border-radius: 5px;
+}

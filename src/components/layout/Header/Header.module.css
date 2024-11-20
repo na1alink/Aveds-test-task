@@ -43,17 +43,35 @@
   font-weight: 500;
   font-size: 20px;
   text-align: center;
-  /* color: var(--accent);
 
-  border: 2px solid var(--accent); */
   border-radius: 7px;
-  padding: 8px 60px;
+  padding: 8px;
   width: 186px;
-  /* height: 40px;
-  background: #fff; */
 }
 
 .nav a:hover,
 .nav button:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .header__container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 19px 0;
+  }
+  .header__container {
+    padding: 0 10px;
+  }
+  .header__nav {
+    gap: 10px;
+  }
+  .header__button {
+    width: 106px;
+    padding: 6px;
+  }
 }

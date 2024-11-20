@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,11 +14,13 @@ const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
   className = "",
+  type = "button",
 }) => {
   return (
     <button
       className={`${styles.button} ${styles[variant]} ${className}`}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>

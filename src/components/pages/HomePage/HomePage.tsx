@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Modal from "../../ui/Modal/Modal";
 import LoginForm from "../../ui/LoginForm/LoginForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { User } from "../../../types/User";
 import commonStyles from "../../../styles/common.module.css";
 import styles from "./HomePage.module.css";
 import Button from "../../ui/Button/Button";
+
+import AdvantagesList from "../../ui/AdvantagesList/AdvantagesList";
 
 interface HomePageProps {
   onLogin: (user: User) => void;
@@ -14,9 +16,17 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ onLogin }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLogin = (user: User) => {
     onLogin(user);
     setIsModalOpen(false);
+    navigate("/profile");
+  };
+
+  const handleLoginSuccess = () => {
+    setIsModalOpen(false);
+    navigate("/profile");
   };
 
   return (
@@ -37,10 +47,10 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin }) => {
             Контакты
           </Link>
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <LoginForm onLogin={handleLogin} />
+            <LoginForm onLogin={handleLogin} onSuccess={handleLoginSuccess} />
           </Modal>
         </div>
-        <div className={styles.HomePage__advantages}>advantages</div>
+        <AdvantagesList />
       </div>
     </section>
   );
