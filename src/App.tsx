@@ -54,6 +54,7 @@ const App: React.FC = () => {
               )
             }
           />
+
           <Route
             path="/profile"
             element={
@@ -64,7 +65,10 @@ const App: React.FC = () => {
               )
             }
           />
+
           <Route path="/contacts" element={<ContactsPage />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainSection>
     </Router>
