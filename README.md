@@ -2,11 +2,18 @@
 
 React-приложение, демонстрирующее базовую аутентификацию и маршрутизацию. Приложение включает в себя заголовок с навигацией, модальное окно для входа, и три основные страницы: Главная, Профиль и Контакты. Пользователь может войти в систему, просмотреть свой профиль и выйти из системы.
 
+## Технологии
+1. Vite: Иинструмент для настройки среды разработки и сборки проекта
+2. React: Библиотека для создания пользовательских интерфейсов
+3. TypeScript: Язык программирования, который добавляет статическую типизацию в JavaScript
+4. React Router: Библиотека для маршрутизации в React-приложениях
+5. LocalStorage: Используется для хранения данных о пользователе между сессиями
+
 ## Установка
 
 1. Клонирование репозитория
 
-`git clone https://github.com/na1alink/Aveds-test-task`
+`git clone https://github.com/na1alink/test-task`
 
 2. Переход в директорию test-task
 
@@ -20,37 +27,14 @@ React-приложение, демонстрирующее базовую аут
 
 `npm start`
 
-## Available Scripts
+## Доступные скрипты
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run dev`
+Запуск сервера разработки, для локальной разработки
 
 ### `npm run build`
+Сначала выполняется сборка TypeScript, чтобы убедиться, что все типы правильно проверены и скомпилированы. Затем Vite собирает приложение для продакшена, оптимизируя и минифицируя код
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm run preview`
+Запускает локальный сервер для предпросмотра собранного приложения
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
