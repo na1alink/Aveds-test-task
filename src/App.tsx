@@ -35,7 +35,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <Router basename="/test-task">
       <Header
         isLoggedIn={!!user}
         onLogout={handleLogout}

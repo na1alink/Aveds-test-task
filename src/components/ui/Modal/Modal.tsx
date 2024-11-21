@@ -1,4 +1,3 @@
-// src/components/ui/Modal/Modal.tsx
 import React, { useEffect } from "react";
 import styles from "./Modal.module.css";
 
@@ -16,7 +15,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    console.log("Key pressed:", e.key); // Добавьте этот console.log
     if (e.key === "Escape") {
       onClose();
     }

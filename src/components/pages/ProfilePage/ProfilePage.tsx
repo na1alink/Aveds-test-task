@@ -13,7 +13,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onLogout }) => {
   return (
     <section className={styles.ProfilePage}>
       <div className={commonStyles.container}>
-        <h1 className={styles.ProfilePage__title}>Привет, {user.name}!</h1>
+        <h1 className={styles.ProfilePage__title}>Привет, {user.name}</h1>
 
         <div className={styles.ProfilePage__actions}>
           <Button
